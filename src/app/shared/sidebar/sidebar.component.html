@@ -1,0 +1,19 @@
+<div
+  class="fixed top-0 left-0 h-screen w-64 bg-gray-800 text-white p-4 transition-transform duration-300"
+  [ngClass]="{ '-translate-x-full': !sidebarOpen, 'translate-x-0': sidebarOpen }"
+>
+  <h2 class="text-xl font-bold mb-4">MENU</h2>
+<ul>
+    <li
+      *ngFor="let item of menuItems"
+      class="py-2 hover:bg-gray-700 cursor-pointer radius"
+      (click)="closeSidebar.emit()"
+    >
+      {{ item.label }}
+    </li>
+  </ul>
+
+  <button (click)="closeSidebar.emit()" class="mt-4 bg-red-500 px-3 py-1 rounded">
+    Đóng
+  </button>
+</div>

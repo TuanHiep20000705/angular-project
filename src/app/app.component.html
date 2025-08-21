@@ -1,0 +1,9 @@
+<main class="main">
+   <header-layout (toggleMenu)="toggleSidebar()" />
+
+   <div class="flex">
+      <sidebar [sidebarOpen]="sidebarOpen" (closeSidebar)="closeSidebar()"></sidebar>
+   </div>
+</main>
+
+<router-outlet />
