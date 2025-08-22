@@ -1,0 +1,16 @@
+<div class="flex justify-between items-center mb-4 pt-4 ps-4 pe-4">
+    <h2 class="text-lg font-semibold">USERS:</h2>
+    <button class="px-3 py-1.5 bg-blue-500 text-white rounded-md hover:bg-blue-700 transition cursor-pointer" (click)="addUser()">
+        Add User
+    </button>
+</div>
+
+<div class="flex flex-col gap-3 ps-4 pe-4">
+    <div *ngFor="let user of users" class="flex items-center gap-3 p-2 border border-gray-300 rounded-lg">
+        <img [src]="user.avatar" alt="User Avatar" class="w-12 h-12 rounded-full" />
+        <div>
+            <h3 class="text-base font-medium">{{ user.name }}</h3>
+            <p class="text-sm text-gray-600">{{ user.email }}</p>
+        </div>
+    </div>
+</div>

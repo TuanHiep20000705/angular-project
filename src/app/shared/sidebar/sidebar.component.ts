@@ -1,10 +1,11 @@
 import { CommonModule } from "@angular/common";
 import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'sidebar',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, RouterLink],
     templateUrl: './sidebar.component.html',
     styleUrl: './sidebar.component.css',
 })
@@ -14,7 +15,7 @@ export class SidebarComponent {
     @Output() closeSidebar = new EventEmitter<void>();
 
     menuItems = [
-        { label: 'Dashboard', route: '/dashboard' },
+        { label: 'Dashboard', route: '/' },
         { label: 'Users', route: '/users' },
         { label: 'Settings', route: '/settings' }
     ];
