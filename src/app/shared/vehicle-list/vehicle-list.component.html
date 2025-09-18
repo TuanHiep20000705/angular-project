@@ -1,0 +1,36 @@
+<div class="p-4">
+  <table class="min-w-full border border-gray-300 text-sm">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="p-2 border">選択</th>
+        <th class="p-2 border">番号番号</th>
+        <th class="p-2 border">車種</th>
+        <th class="p-2 border">電池寿命グレード</th>
+        <th class="p-2 border">SOH</th>
+        <th class="p-2 border">測定日</th>
+        <th class="p-2 border">診断書</th>
+        <th class="p-2 border">保証</th> <!-- 👈 chuyển xuống cuối -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of vehicles" class="hover:bg-gray-50">
+        <td class="p-2 border text-center">
+          <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+        </td>
+        <td class="p-2 border">{{ v.id }}</td>
+        <td class="p-2 border">{{ v.model }}</td>
+        <td class="p-2 border">{{ v.grade }}</td>
+        <td class="p-2 border">{{ v.soh }}</td>
+        <td class="p-2 border">{{ v.date }}</td>
+        <td class="p-2 border text-blue-600 underline cursor-pointer">
+          <a [href]="v.link">表示</a>
+        </td>
+        <td class="p-2 border">
+          <a [routerLink]="['/warranty', v.id]" class="text-blue-600 underline cursor-pointer">
+            {{ v.warranty }}
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

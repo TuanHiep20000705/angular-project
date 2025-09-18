@@ -31,6 +31,6 @@ export class UsersComponent implements OnInit {
     }
 
     addUser() {
-
+        console.log('test add user');
     }
 }

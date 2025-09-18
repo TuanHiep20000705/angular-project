@@ -5,6 +5,7 @@ import { AppComponent } from "./app.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from '@angular/common/http';
+import { VehicleListComponent } from "./shared/vehicle-list/vehicle-list.component";
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
         AppComponent,
         HeaderLayoutComponent,
         SidebarComponent,
-        HttpClientModule
+        HttpClientModule,
+        VehicleListComponent,
     ],
     providers: [],
     bootstrap: [AppComponent]

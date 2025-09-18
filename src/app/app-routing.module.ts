@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { WarrantyComponent } from './shared/battery-status/warranty.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./shared/settings/settings.module').then((m) => m.SettingsModule),
   },
+  { path: 'warranty/:id', component: WarrantyComponent },
 ];
 
 @NgModule({

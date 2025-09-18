@@ -1,0 +1,68 @@
+<div class="flex flex-col items-center space-y-6 bg-gray-50 p-6 rounded-lg shadow-md">
+  <!-- タイトル -->
+  <div class="text-red-500 font-semibold text-lg">
+    × 保証：バッテリー交換可能
+  </div>
+
+  <!-- 容量維持率バー -->
+  <div class="w-full max-w-md">
+    <div class="relative w-full h-6 border border-gray-400 rounded">
+      <!-- ピンク部分: 容量 -->
+      <div class="h-6 bg-pink-400 rounded-l" [style.width.%]="capacityRate"></div>
+
+      <!-- 保証条件のライン -->
+      <div
+        class="absolute top-0 bottom-0 border-l-2 border-red-500"
+        [style.left.%]="warrantyCondition"
+      ></div>
+    </div>
+
+    <div class="flex justify-between text-sm mt-1">
+      <span class="text-pink-600 font-medium">容量維持率：{{ capacityRate }}%</span>
+      <span class="text-gray-700">保証条件{{ warrantyCondition }}%</span>
+    </div>
+  </div>
+
+  <!-- 2つの円グラフ -->
+  <div class="flex space-x-8">
+    <!-- 円グラフ 1 -->
+    <div class="relative w-36 h-36">
+      <svg class="w-full h-full">
+        <circle
+          cx="50%"
+          cy="50%"
+          r="44%"
+          stroke="#34d399"
+          stroke-width="17"
+          fill="none"
+          stroke-dasharray="283"
+          stroke-dashoffset="40"
+        ></circle>
+      </svg>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+        <div class="text-sm text-gray-700">走行距離</div>
+        <div class="text-lg font-bold">{{ distance }}km</div>
+      </div>
+    </div>
+
+    <!-- 円グラフ 2 -->
+    <div class="relative w-36 h-36">
+      <svg class="w-full h-full">
+        <circle
+          cx="50%"
+          cy="50%"
+          r="44%"
+          stroke="#34d399"
+          stroke-width="17"
+          fill="none"
+          stroke-dasharray="283"
+          stroke-dashoffset="10"
+        ></circle>
+      </svg>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+        <div class="text-sm text-gray-700">経過年数</div>
+        <div class="text-lg font-bold">{{ years }}年{{ months }}か月</div>
+      </div>
+    </div>
+  </div>
+</div>
